@@ -35,9 +35,11 @@ SELECT videogame_id
 FROM category_videogame
 WHERE category_id = 2 OR category_id = 6
 GROUP BY videogame_id;
-
 -- 
 -- 8- Selezionare tutte le recensioni con voto compreso tra 2 e 4 (2947)
+SELECT *
+FROM reviews
+WHERE rating >=2 AND rating <=4;
 -- 
 -- 9- Selezionare tutti i dati dei videogiochi rilasciati nell'anno 2020 (46)
 -- 
