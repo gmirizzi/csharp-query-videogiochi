@@ -79,11 +79,14 @@ FROM reviews
 GROUP BY videogame_id;
 -- 
 -- 3- Contare quanti videogiochi hanno ciascuna classificazione PEGI (della classificazione PEGI vogliamo solo l'ID) (13)
-SELECT pegi_label_id, COUNT(videogame_id) AS videogame_number
+SELECT pegi_label_id, COUNT(videogame_id) AS videogames_number
 FROM pegi_label_videogame
 GROUP BY pegi_label_id;
 -- 
 -- 4- Mostrare il numero di videogiochi rilasciati ogni anno (11)
+SELECT YEAR(release_date) AS Year, COUNT(id) AS Videogames_number
+FROM videogames
+GROUP BY YEAR(release_date);
 -- 
 -- 5- Contare quanti videogiochi sono disponbiili per ciascun device (del device vogliamo solo l'ID) (7)
 -- 
