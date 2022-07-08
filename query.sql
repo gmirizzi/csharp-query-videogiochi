@@ -47,6 +47,10 @@ FROM videogames
 WHERE YEAR(release_date) = '2020';
 -- 
 -- 10- Selezionare gli id dei videogame che hanno ricevuto almeno una recensione da 5 stelle, mostrandoli una sola volta (443)
+SELECT videogame_id
+FROM reviews
+WHERE rating >= 5
+GROUP BY videogame_id;
 -- 
 -- *********** BONUS ***********
 -- 
