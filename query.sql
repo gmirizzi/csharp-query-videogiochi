@@ -131,6 +131,12 @@ ON category_videogame.category_id=c.id
 GROUP BY v.id, v.name, v.release_date, c.id, c.name;
 -- 
 -- 4- Selezionare i dati di tutte le software house che hanno rilasciato almeno un gioco dopo il 2020, mostrandoli una sola volta (6)
+SELECT software_house_id, sh.name, tax_id, city, country
+FROM software_houses AS sh
+RIGHT JOIN videogames
+ON sh.id = software_house_id
+WHERE YEAR(release_date) > 2020
+GROUP BY software_house_id, sh.name, tax_id, city, country;
 -- 
 -- 5- Selezionare i premi ricevuti da ogni software house per i videogiochi che ha prodotto (55)
 -- 
