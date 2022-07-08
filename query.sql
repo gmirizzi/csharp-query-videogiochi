@@ -94,6 +94,10 @@ FROM device_videogame
 GROUP BY device_id
 -- 
 -- 6- Ordinare i videogame in base alla media delle recensioni (del videogioco vogliamo solo l'ID) (500)
+SELECT videogame_id, AVG(rating) AS avg_rating
+FROM reviews
+GROUP BY videogame_id
+ORDER BY AVG(rating);
 -- ```
 -- 
 -- ------ Query con join
