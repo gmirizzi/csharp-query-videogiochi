@@ -121,7 +121,14 @@ WHERE year = 2016
 GROUP BY videogame_id, videogames.name;
 -- 
 -- 3- Mostrare le categorie di ogni videogioco
--- SELECT v.id AS videogame_id, v.name AS videogame_name, v.release_date, c.id AS category_id, c.name AS category_name (1718)
+--SELECT v.id AS videogame_id, v.name AS videogame_name, v.release_date, c.id AS category_id, c.name AS category_name (1718)
+SELECT v.id AS videogame_id, v.name AS videogame_name, v.release_date, c.id AS category_id, c.name AS category_name
+FROM videogames AS v
+RIGHT JOIN category_videogame
+ON v.id=category_videogame.videogame_id
+LEFT JOIN categories AS c
+ON category_videogame.category_id=c.id
+GROUP BY v.id, v.name, v.release_date, c.id, c.name;
 -- 
 -- 4- Selezionare i dati di tutte le software house che hanno rilasciato almeno un gioco dopo il 2020, mostrandoli una sola volta (6)
 -- 
