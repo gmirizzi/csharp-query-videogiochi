@@ -21,6 +21,9 @@ FROM reviews
 WHERE player_id = 800;
 -- 
 -- 5- Contare quanti tornei ci sono stati nell'anno 2015 (9)
+SELECT COUNT(*)
+FROM tournaments
+WHERE year = 2015;
 -- 
 -- 6- Selezionare tutti i premi che contengono nella descrizione la parola 'facere' (2)
 -- 
