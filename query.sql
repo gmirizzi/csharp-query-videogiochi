@@ -74,6 +74,9 @@ FROM software_houses
 GROUP BY country;
 -- 
 -- 2- Contare quante recensioni ha ricevuto ogni videogioco (del videogioco vogliamo solo l'ID) (500)
+SELECT videogame_id, COUNT(*) AS reviews_number
+FROM reviews
+GROUP BY videogame_id;
 -- 
 -- 3- Contare quanti videogiochi hanno ciascuna classificazione PEGI (della classificazione PEGI vogliamo solo l'ID) (13)
 -- 
