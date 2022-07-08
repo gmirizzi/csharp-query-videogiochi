@@ -42,8 +42,11 @@ FROM reviews
 WHERE rating >=2 AND rating <=4;
 -- 
 -- 9- Selezionare tutti i dati dei videogiochi rilasciati nell'anno 2020 (46)
+SELECT name, overview
+FROM videogames
+WHERE YEAR(release_date) = '2020';
 -- 
--- 10- Selezionare gli id dei videogame che hanno ricevuto almeno una recensione da stelle, mostrandoli una sola volta (443)
+-- 10- Selezionare gli id dei videogame che hanno ricevuto almeno una recensione da 5 stelle, mostrandoli una sola volta (443)
 -- 
 -- *********** BONUS ***********
 -- 
