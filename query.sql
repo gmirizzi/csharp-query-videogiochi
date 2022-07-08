@@ -69,6 +69,9 @@ WHERE software_house_id = 1 AND YEAR(release_date) = '2018';
 -- 
 -- ```
 -- 1- Contare quante software house ci sono per ogni paese (3)
+SELECT country, COUNT(*)
+FROM software_houses
+GROUP BY country;
 -- 
 -- 2- Contare quante recensioni ha ricevuto ogni videogioco (del videogioco vogliamo solo l'ID) (500)
 -- 
