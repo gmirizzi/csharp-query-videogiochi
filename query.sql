@@ -26,6 +26,9 @@ FROM tournaments
 WHERE year = 2015;
 -- 
 -- 6- Selezionare tutti i premi che contengono nella descrizione la parola 'facere' (2)
+SELECT *
+FROM awards
+WHERE description LIKE '%facere%';
 -- 
 -- 7- Selezionare tutti i videogame che hanno la categoria 2 (FPS) o 6 (RPG), mostrandoli una sola volta (del videogioco vogliamo solo l'ID) (287)
 -- 
