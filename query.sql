@@ -89,6 +89,9 @@ FROM videogames
 GROUP BY YEAR(release_date);
 -- 
 -- 5- Contare quanti videogiochi sono disponbiili per ciascun device (del device vogliamo solo l'ID) (7)
+SELECT device_id, COUNT(videogame_id) AS Videogames_number
+FROM device_videogame
+GROUP BY device_id
 -- 
 -- 6- Ordinare i videogame in base alla media delle recensioni (del videogioco vogliamo solo l'ID) (500)
 -- ```
