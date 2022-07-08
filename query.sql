@@ -60,6 +60,9 @@ FROM reviews
 WHERE videogame_id = 412;
 -- 
 -- 12- Selezionare il numero di videogame che la software house con ID = 1 ha rilasciato nel 2018 (13)
+SELECT COUNT(*)
+FROM videogames
+WHERE software_house_id = 1 AND YEAR(release_date) = '2018';
 -- ```
 -- 
 -- ------ Query con group by
