@@ -11,6 +11,9 @@ FROM players
 WHERE city = 'Rogahnland';
 -- 
 -- 3- Selezionare tutti i giocatori il cui nome finisce per "a" (220)
+SELECT *
+FROM players
+WHERE name LIKE '%a';
 -- 
 -- 4- Selezionare tutte le recensioni scritte dal giocatore con ID = 800 (11)
 -- 
