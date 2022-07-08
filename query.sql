@@ -152,6 +152,18 @@ GROUP BY software_house_id, software_houses.name, videogames.name, awards.name;
 -- 6- Selezionare categorie e classificazioni PEGI dei videogiochi che hanno ricevuto recensioni da 4 e 5 stelle, mostrandole una sola volta (3363)
 -- 
 -- 7- Selezionare quali giochi erano presenti nei tornei nei quali hanno partecipato i giocatori il cui nome inizia per 'S' (474)
+SELECT videogames.id
+FROM videogames
+RIGHT JOIN tournament_videogame
+ON videogames.id= tournament_videogame.videogame_id
+LEFT JOIN tournaments
+ON tournaments.id= tournament_videogame.tournament_id
+RIGHT JOIN player_tournament
+ON tournaments.id=player_tournament.tournament_id
+LEFT JOIN players
+ON players.id=player_tournament.player_id
+WHERE players.name LIKE 'S%'
+GROUP BY videogames.id;
 -- 
 -- 8- Selezionare le città in cui è stato giocato il gioco dell'anno del 2018 (36)
 -- 
