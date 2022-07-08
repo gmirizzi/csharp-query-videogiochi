@@ -16,6 +16,9 @@ FROM players
 WHERE name LIKE '%a';
 -- 
 -- 4- Selezionare tutte le recensioni scritte dal giocatore con ID = 800 (11)
+SELECT *
+FROM reviews
+WHERE player_id = 800;
 -- 
 -- 5- Contare quanti tornei ci sono stati nell'anno 2015 (9)
 -- 
