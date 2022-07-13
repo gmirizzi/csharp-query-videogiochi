@@ -193,6 +193,21 @@ ON a.id = av.award_id
 WHERE av.year = 2018 AND a.name = 'Gioco dell''anno';
 -- 
 -- 9- Selezionare i giocatori che hanno giocato al gioco più atteso del 2018 in un torneo del 2019 (3306)
+SELECT players.*
+FROM players
+RIGHT JOIN player_tournament
+ON players.id = player_tournament.player_id
+LEFT JOIN tournaments
+ON tournaments.id = player_tournament.tournament_id
+RIGHT JOIN tournament_videogame
+ON tournaments.id = tournament_videogame.tournament_id
+LEFT JOIN videogames
+ON videogames.id = tournament_videogame.videogame_id
+RIGHT JOIN award_videogame
+ON videogames.id = award_videogame.videogame_id
+LEFT JOIN awards
+ON awards.id = award_videogame.award_id
+WHERE awards.name = 'Gioco più atteso' AND award_videogame.year = 2018 AND tournaments.year= 2019;
 -- 
 -- *********** BONUS ***********
 -- 
